@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Buscador } from "./buscador";
+import { GridGifs } from "./GridGifs";
 
 function App() {
 
@@ -31,11 +33,20 @@ const onSubmit= async (e) =>{
   return (
     <div className="App">
       
-      <form onSubmit={onSubmit}>
-      <input onChange={e => onChange(e)}></input>
-  
+      <Buscador 
+        onChange={onChange}
+        onSubmit={onSubmit}
+        valorInput={valorInput}
+      
+      />
+      <GridGifs 
+        gifs={gifs}
+      
+      />
 
-      </form>
+
+
+
       </div>
   )
 }
